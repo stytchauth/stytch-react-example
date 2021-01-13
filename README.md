@@ -8,3 +8,6 @@ Example app using the Stytch Javascript SDK, React, and Express
 1. From the API keys tab, create a public token and use it for `STYTCH_PUBLIC_TOKEN` in `Login.js`.
 1. Run the app: `npm start`
 1. Open the app in your browser at `localhost:9000`
+
+# Session management
+This app sets a variable in React state for authenticating a user to illustrate the user experience for authenticating with Stytch - we don't recommend doing this! You should use a more secure session management solution, like [express-session](https://www.npmjs.com/package/express-session).
