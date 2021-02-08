@@ -1,7 +1,9 @@
 # Stytch.js with React and Express
+
 Example app using the Stytch Javascript SDK, React, and Express
 
 # Getting started
+
 1. Make sure you have node installed: `brew install node`
 1. Install dependencies: `npm install`
 1. Add your Stytch API credentials from the API keys tab in your Stytch dashboard. You'll need to update `STYTCH_PROJECT_ID` and `STYTCH_SECRET` in your `.env` file with your project ID and secret from the dashboard.
@@ -10,4 +12,5 @@ Example app using the Stytch Javascript SDK, React, and Express
 1. Open the app in your browser at `localhost:9000`
 
 # Session management
+
 This app sets a variable in React state for authenticating a user to illustrate the user experience for authenticating with Stytch - we don't recommend doing this! You should use a more secure session management solution, like [express-session](https://www.npmjs.com/package/express-session).
