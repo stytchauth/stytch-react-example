@@ -3,6 +3,8 @@ const path = require("path");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 
+var db = require("./src/Database.js");
+
 require("dotenv").config();
 
 const app = express();
@@ -12,11 +14,22 @@ app.use(express.static("public"));
 
 app.use(bodyParser.json());
 
-app.post("/users", function (req, res) {
-  var stytchUserId = req.body.userId;
-  console.log("users post");
-  // TODO: Save stytchUserId with your user record in your app's storage
-  res.send(`Created user with stytchUserId: ${stytchUserId}`);
+app.post("/users", async function (req, res) {
+  const stytchUserId = req.body.userId;
+  const email = req.body.email;
+  const query = `SELECT id, email FROM user WHERE stytch_id = "${stytchUserId}" AND email = "${email}"`;
+  db.all(query, [], (err, rows) => {
+    if (err) return res.status(400).send(err);
+    let respData;
+    if (rows.length === 0) {
+      const insertQuery = `INSERT into user (email, stytch_id) VALUES ("${email}", "${stytchUserId}")`;
+      db.run(insertQuery, (result, err) => {
+        if (err) return res.status(400).send(err);
+        respData = result;
+      });
+    }
+    res.status(200).send(respData || rows[0]);
+  });
 });
 
 app.get("/authenticate/:token", function (req, res) {
