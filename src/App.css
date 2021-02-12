@@ -4,27 +4,27 @@
 
 .App-content {
   align-items: center;
-	display: flex;
-	flex-direction: column;
-	height: calc(100vh - 81px);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 81px);
   justify-content: center;
 }
 
 .App-header {
-	align-items: center;
-	border-bottom: 1px solid black;
-	display: flex;
-	height: 80px;
-	width: 100%;
+  align-items: center;
+  border-bottom: 1px solid black;
+  display: flex;
+  height: 80px;
+  width: 100%;
 }
 
 .Sign-in-container {
   border: 1px solid #cccccc;
-	border-radius: 4px;
+  border-radius: 4px;
   max-width: 400px;
-	text-align: center;
+  text-align: center;
 }
 
 .link {
-	margin-left: 20px;
+  margin-left: 20px;
 }
