@@ -20,7 +20,6 @@ const Login = () => {
     var style = {
       fontFamily: '"Helvetica New", Helvetica, sans-serif',
       button: { color: "#106ee9" },
-      fullWidth: true,
       input: { color: "#090909" },
     };
     var loginOrCreateUserConfig = {
