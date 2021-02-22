@@ -3,7 +3,6 @@ import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
   const stytchProps = {
-    type: "loginOrCreate",
     config: {
       loginConfig: {
         magicLinkUrl: "http://localhost:9000/authenticate",
@@ -21,15 +20,20 @@ const Login = () => {
     },
     // Fill this public token in from your Stytch dashboard.
     publicToken: "public-token-1111-1111-1111",
+    callbacks: {
+      onEvent: (message) => console.log(message),
+      onSuccess: (message) => console.log(message),
+      onError: (message) => console.log(message),
+    },
   };
 
   return (
     <div className="Sign-in-container">
       <Stytch
         publicToken={stytchProps.publicToken}
-        type={stytchProps.type}
         config={stytchProps.config}
         style={stytchProps.style}
+        callbacks={stytchProps.callbacks}
       />
     </div>
   );
