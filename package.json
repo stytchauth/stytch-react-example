@@ -14,7 +14,7 @@
     "url": "git+https://github.com/stytchauth/stytchjs-react-express.git"
   },
   "dependencies": {
-    "@stytch/stytch-js": "^0.2.0",
+    "@stytch/stytch-react": "^1.0.0",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

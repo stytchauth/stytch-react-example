@@ -1,28 +1,9 @@
 import React from "react";
-import Stytch from "@stytch/stytch-js";
+import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
-  React.useEffect(() => {
-    // Initialize Stytch.js with your public token. You can find this in your Stytch dashboard under API Keys.
-    var STYTCH_PUBLIC_TOKEN = "public-token-test-111111111";
-    var stytch = Stytch(STYTCH_PUBLIC_TOKEN, {
-      onEvent: (response) => {
-        console.log(response);
-      },
-      onSuccess: (response) => {
-        // Handle a successfully sent magic link
-        console.log(response);
-      },
-      onError: (response) => {
-        console.log(response);
-      },
-    });
-    var style = {
-      fontFamily: '"Helvetica New", Helvetica, sans-serif',
-      button: { color: "#106ee9" },
-      input: { color: "#090909" },
-    };
-    var loginOrCreateUserConfig = {
+  const stytchProps = {
+    config: {
       loginConfig: {
         magicLinkUrl: "http://localhost:9000/authenticate",
         expirationMinutes: 30,
@@ -31,18 +12,24 @@ const Login = () => {
         magicLinkUrl: "http://localhost:9000/authenticate",
         expirationMinutes: 30,
       },
-    };
-    stytch.mountLoginOrCreateUser({
-      elementId: "#magic-link",
-      style: style,
-      config: loginOrCreateUserConfig,
-    });
-  }, []);
+    },
+    style: {
+      button: {
+        textColor: "yellow",
+      },
+    },
+    // Fill this token in from your Stytch dashboard
+    publicToken: "public-token-1111-1111-1111",
+  };
 
   return (
     <div className="Sign-in-container">
-      <h2>Sign up or log in</h2>
-      <div id="magic-link"></div>
+      <Stytch
+        publicToken={stytchProps.publicToken}
+        type={stytchProps.type}
+        config={stytchProps.config}
+        style={stytchProps.style}
+      />
     </div>
   );
 };
