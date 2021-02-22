@@ -3,6 +3,7 @@ import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
   const stytchProps = {
+    type: "loginOrCreate",
     config: {
       loginConfig: {
         magicLinkUrl: "http://localhost:9000/authenticate",
@@ -14,11 +15,11 @@ const Login = () => {
       },
     },
     style: {
-      button: {
-        textColor: "yellow",
-      },
+      fontFamily: '"Helvetica New", Helvetica, sans-serif',
+      button: { backgroundColor: "#106ee9" },
+      input: { textColor: "#090909" },
     },
-    // Fill this token in from your Stytch dashboard
+    // Fill this public token in from your Stytch dashboard.
     publicToken: "public-token-1111-1111-1111",
   };
 
