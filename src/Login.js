@@ -1,28 +1,10 @@
 import React from "react";
-import Stytch from "@stytch/stytch-js";
+import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
-  React.useEffect(() => {
-    // Initialize Stytch.js with your public token. You can find this in your Stytch dashboard under API Keys.
-    var STYTCH_PUBLIC_TOKEN = "public-token-test-111111111";
-    var stytch = Stytch(STYTCH_PUBLIC_TOKEN, {
-      onEvent: (response) => {
-        console.log(response);
-      },
-      onSuccess: (response) => {
-        // Handle a successfully sent magic link
-        console.log(response);
-      },
-      onError: (response) => {
-        console.log(response);
-      },
-    });
-    var style = {
-      fontFamily: '"Helvetica New", Helvetica, sans-serif',
-      button: { color: "#106ee9" },
-      input: { color: "#090909" },
-    };
-    var loginOrCreateUserConfig = {
+  const STYTCH_PUBLIC_TOKEN = "public-token-1111-1111-1111";
+  const stytchProps = {
+    config: {
       loginConfig: {
         magicLinkUrl: "http://localhost:9000/authenticate",
         expirationMinutes: 30,
@@ -31,18 +13,29 @@ const Login = () => {
         magicLinkUrl: "http://localhost:9000/authenticate",
         expirationMinutes: 30,
       },
-    };
-    stytch.mountLoginOrCreateUser({
-      elementId: "#magic-link",
-      style: style,
-      config: loginOrCreateUserConfig,
-    });
-  }, []);
+    },
+    style: {
+      fontFamily: '"Helvetica New", Helvetica, sans-serif',
+      button: { backgroundColor: "#106ee9" },
+      input: { textColor: "#090909" },
+    },
+    // Fill this public token in from your Stytch dashboard.
+    publicToken: STYTCH_PUBLIC_TOKEN,
+    callbacks: {
+      onEvent: (message) => console.log(message),
+      onSuccess: (message) => console.log(message),
+      onError: (message) => console.log(message),
+    },
+  };
 
   return (
     <div className="Sign-in-container">
-      <h2>Sign up or log in</h2>
-      <div id="magic-link"></div>
+      <Stytch
+        publicToken={stytchProps.publicToken}
+        config={stytchProps.config}
+        style={stytchProps.style}
+        callbacks={stytchProps.callbacks}
+      />
     </div>
   );
 };
