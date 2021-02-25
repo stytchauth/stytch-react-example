@@ -2,6 +2,7 @@ import React from "react";
 import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
+  const STYTCH_PUBLIC_TOKEN = "public-token-1111-1111-1111";
   const stytchProps = {
     config: {
       loginConfig: {
@@ -19,7 +20,7 @@ const Login = () => {
       input: { textColor: "#090909" },
     },
     // Fill this public token in from your Stytch dashboard.
-    publicToken: "public-token-1111-1111-1111",
+    publicToken: STYTCH_PUBLIC_TOKEN,
     callbacks: {
       onEvent: (message) => console.log(message),
       onSuccess: (message) => console.log(message),
