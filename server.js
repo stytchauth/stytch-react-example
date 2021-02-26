@@ -27,7 +27,9 @@ app.post("/users", async function (req, res) {
         if (err) return res.status(400).send(err);
         respData = result;
       });
+      console.log("User created");
     }
+    console.log("User retrieved");
     res.status(200).send(respData || rows[0]);
   });
 });
