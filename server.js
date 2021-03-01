@@ -18,26 +18,26 @@ app.post("/users", async function (req, res) {
   const stytchUserId = req.body.userId;
   const email = req.body.email;
 
-  // Query the user by stytch id and email
+  // Query the user by stytch_id and email
   const query = `SELECT id, email FROM user WHERE stytch_id = "${stytchUserId}" AND email = "${email}"`;
 
   db.all(query, [], (err, rows) => {
     if (err) return res.status(400).send(err);
-    let respData;
 
     // If user is not found, create a new user with stytch_id and email
     if (rows.length === 0) {
       const insertQuery = `INSERT into user (email, stytch_id) VALUES ("${email}", "${stytchUserId}")`;
       db.run(insertQuery, (result, err) => {
-        if (err) return res.status(400).send(err);
-        respData = result;
+        if (err) {
+          return res.status(400).send(err);
+        } else {
+          console.log("User created");
+          return res.status(201).send(result);
       });
-      console.log("User created");
-    }
-
+    } else {
     // User was already saved in database.
     console.log("User retrieved");
-    res.status(200).send(respData || rows[0]);
+    res.status(200).send(rows[0]);
   });
 });
 
