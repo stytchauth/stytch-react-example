@@ -3,7 +3,7 @@ const path = require("path");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 
-var db = require("./src/Database.js");
+var db = require("./database.js");
 
 require("dotenv").config();
 
@@ -33,11 +33,13 @@ app.post("/users", async function (req, res) {
         } else {
           console.log("User created");
           return res.status(201).send(result);
+        }
       });
     } else {
-    // User was already saved in database.
-    console.log("User retrieved");
-    res.status(200).send(rows[0]);
+      // User was already saved in database.
+      console.log("User retrieved");
+      res.status(200).send(rows[0]);
+    }
   });
 });
 
