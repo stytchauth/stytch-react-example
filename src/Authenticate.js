@@ -13,11 +13,17 @@ const Authenticate = ({ setAuthenticated }) => {
 
   React.useEffect(() => {
     const authenticate = async () => {
-      const response = await fetch(`/authenticate/${token}`);
-      if (response.ok) {
-        setAuthenticated(true);
-        history.push("/");
-      } else {
+      try {
+        const response = await fetch(`/authenticate/${token}`);
+        if (response.ok) {
+          // TODO: Add database call to get user and set information here.
+          setAuthenticated(true);
+          history.push("/");
+        } else {
+          history.push("/login");
+        }
+      } catch (err) {
+        console.error("Error authenticating magic link");
         history.push("/login");
       }
     };

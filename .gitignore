@@ -3,3 +3,4 @@
 /build
 .eslintcache
 node_modules
+db.sqlite
