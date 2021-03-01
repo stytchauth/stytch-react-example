@@ -2,7 +2,8 @@ import React from "react";
 import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
-  const STYTCH_PUBLIC_TOKEN = "public-token-11111-11111-11111";
+  const STYTCH_PUBLIC_TOKEN =
+    "public-token-test-196bf55b-4d4d-4694-bb9c-4312a2398cf6";
   const stytchProps = {
     config: {
       loginConfig: {
@@ -22,7 +23,7 @@ const Login = () => {
     // Fill this public token in from your Stytch dashboard.
     publicToken: STYTCH_PUBLIC_TOKEN,
     callbacks: {
-      onEvent: (data => {
+      onEvent: (data) => {
         if (data.eventData.type === "USER_EVENT_TYPE") {
           fetch("/users", {
             method: "POST",

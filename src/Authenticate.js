@@ -15,8 +15,6 @@ const Authenticate = ({ setAuthenticated }) => {
     const authenticate = async () => {
       try {
         const response = await fetch(`/authenticate/${token}`);
-        const data = await response.data();
-        console.log(response.ok);
         if (response.ok) {
           setAuthenticated(true);
           history.push("/");
