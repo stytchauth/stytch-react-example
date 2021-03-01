@@ -2,8 +2,7 @@ import React from "react";
 import { Stytch } from "@stytch/stytch-react";
 
 const Login = () => {
-  const STYTCH_PUBLIC_TOKEN =
-    "public-token-test-196bf55b-4d4d-4694-bb9c-4312a2398cf6";
+  const STYTCH_PUBLIC_TOKEN = "public-token-1111-1111-1111";
   const stytchProps = {
     config: {
       loginConfig: {

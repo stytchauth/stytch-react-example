@@ -16,6 +16,7 @@ const Authenticate = ({ setAuthenticated }) => {
       try {
         const response = await fetch(`/authenticate/${token}`);
         if (response.ok) {
+          // TODO: Add database call to get user and set information here.
           setAuthenticated(true);
           history.push("/");
         } else {
