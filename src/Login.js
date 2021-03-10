@@ -15,8 +15,8 @@ const Login = () => {
       },
     },
     style: {
-      fontFamily: 'IBM Plex Sans, sans-serif',
-      borderRadius: 500,
+      fontFamily: '"Helvetica New", Helvetica, sans-serif',
+      borderRadius: 10,
       button: {
         backgroundColor: '#0577CA',
       },
