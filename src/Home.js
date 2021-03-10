@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const LoggedOut = () => {
   return (
     <div>
-      <div>You are logged out.</div>
-      <Link to="/login">Login</Link>
+      <h2>See you next time! 👋 </h2>
+      <Link class="Button" to="/login">Login</Link>
     </div>
   );
 };
 
 const LoggedIn = () => {
-  return <div>You are logged in.</div>;
+  return <h2>Welcome back! 🎉</h2>;
 };
 
 const Home = ({ authenticated }) => {

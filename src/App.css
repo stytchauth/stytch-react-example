@@ -1,5 +1,36 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
-  font-family: "Helvetica New", Helvetica, sans-serif;
+  font-family: 'IBM Plex Sans';
+}
+
+.Button {
+  position: absolute;
+  line-height: 49px;
+  width: 321px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: #0577CA;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.Button, a:link, a:visited {
+  text-decoration: none;
 }
 
 .App-content {
@@ -8,22 +39,30 @@
   flex-direction: column;
   height: calc(100vh - 81px);
   justify-content: center;
+  background-color: #E5E5E5;
 }
 
 .App-header {
   align-items: center;
-  border-bottom: 1px solid black;
   display: flex;
   height: 80px;
   width: 100%;
+  background: #0577CA;
 }
 
 .Sign-in-container {
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  max-width: 400px;
-  text-align: center;
+  background-color: #FFFFFF;
+  width: 450px;
+  height: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #EBEBEB;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  border-radius: 9px
 }
+
 
 .link {
   margin-left: 20px;
