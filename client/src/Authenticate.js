@@ -8,13 +8,12 @@ const Authenticate = ({ setAuthenticated }) => {
   if (typeof token !== "string") {
     throw new Error("No valid token provided.");
   }
-
   const history = useHistory();
 
   React.useEffect(() => {
     const authenticate = async () => {
       try {
-        const response = await fetch(`/authenticate/${token}`);
+        const response = await fetch(`/stytch?token=${token}`);
         if (response.ok) {
           // TODO: Add database call to get user and set information here.
           setAuthenticated(true);
