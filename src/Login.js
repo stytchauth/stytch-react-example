@@ -1,5 +1,5 @@
-import React from "react";
 import { Stytch } from "@stytch/stytch-react";
+import React from "react";
 
 const Login = () => {
   const STYTCH_PUBLIC_TOKEN = "public-token-1111-1111-1111";
@@ -16,8 +16,14 @@ const Login = () => {
     },
     style: {
       fontFamily: '"Helvetica New", Helvetica, sans-serif',
-      button: { backgroundColor: "#106ee9" },
-      input: { textColor: "#090909" },
+      borderRadius: 10,
+      button: {
+        backgroundColor: '#0577CA',
+      },
+      input: {
+        textColor: '#090909'
+      },
+      width: '321px'
     },
     // Fill this public token in from your Stytch dashboard.
     publicToken: STYTCH_PUBLIC_TOKEN,

@@ -1,23 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Login from "./Login";
-import Home from "./Home";
 import Authenticate from "./Authenticate";
+import Home from "./Home";
+import Login from "./Login";
 
 function App() {
   const [authenticated, setAuthenticated] = React.useState(false);
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <Link className="link" to="/">
-            Home
-          </Link>
-          <Link className="link" to="/login">
-            Login
-          </Link>
-        </header>
+        <header className="App-header"/>
         <div className="App-content">
           <Switch>
             <Route path="/authenticate">
