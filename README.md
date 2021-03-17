@@ -5,12 +5,23 @@ Example app using the Stytch Javascript SDK, React, and Express
 # Getting started
 
 1. Make sure you have node installed: `brew install node`
-1. Install dependencies: `npm install`
-1. Copy the .env_template to your own .env file (`cp .env_template .env`)
-1. Add your Stytch API credentials from the API keys tab in your Stytch dashboard. You'll need to update `STYTCH_PROJECT_ID` and `STYTCH_SECRET` in your `.env` file with your project ID and secret from the dashboard.
-1. From the API keys tab, create a public token and use it for `STYTCH_PUBLIC_TOKEN` in `Login.js`.
-1. Run the app: `npm start`
-1. Open the app in your browser at `localhost:9000`
+2. Copy the .env_template to your own .env file (`cp .env_template .env`)
+3. Add your Stytch API credentials from the API keys tab in your Stytch dashboard. You'll need to update `STYTCH_PROJECT_ID` and `STYTCH_SECRET` in your `.env` file with your project ID and secret from the dashboard.
+4. From the API keys tab, create a public token and use it for `STYTCH_PUBLIC_TOKEN` in `client/src/Login.js`.
+5. Run the app:
+   Build the front end:
+   ```
+   cd client
+   npm install
+   npm run build
+   ```
+   Run the backend:
+   ```
+   cd server/node
+   npm install
+   npm start
+   ```
+6. Open the app in your browser at `localhost:9000`
 
 # Session management
 

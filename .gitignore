@@ -4,3 +4,5 @@
 .eslintcache
 node_modules
 db.sqlite
+env
+client/build/
