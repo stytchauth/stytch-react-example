@@ -12,15 +12,15 @@ In order to use this app, you'll need to build the frontend and start the backen
 
 ## Build the client
 
-2. Build the front end files from the client directory. Note: You'll need to rebuild your files to reflect any changes you want to make.
+1. Build the frontend files from the client directory. Note: You'll need to rebuild your files to reflect any changes you want to make.
    ```
    $ cd client
    $ npm run build
    ```
-3. This example app serves the frontend when you run a backend server. Click on the links below Supported Languages to your preferred language to see instructions on how to run the server.
+1. This example app serves the frontend when you run a backend server. Click on the links under Supported server languages to go to the readme for your preferred language.
 
 ## Supported server languages
 
 Click on the language to navigate to the setup instructions for each server
 [Python (3.7)](https://github.com/stytchauth/stytchjs-react-express/tree/main/server/python)
-[node](https://github.com/stytchauth/stytchjs-react-express/tree/main/server/node)
+[Node](https://github.com/stytchauth/stytchjs-react-express/tree/main/server/node)

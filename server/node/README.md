@@ -1,6 +1,6 @@
 # Node backend server
 
-Set up an Express server that will serve the front end and make API calls to Stytch.
+This directory contains an example Express server that authenticates your magic link via the Stytch API. It also serves the frontend React app
 
 ## Requirements
 

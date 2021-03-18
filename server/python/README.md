@@ -1,6 +1,6 @@
 # Python (3.7) backend server
 
-Set up an Express server that will serve the front end and make API calls to Stytch.
+This directory contains example python code to run a Flask server that authenticates your magic link with the stytch-python client library. It also serves the frontend React app
 
 ## Requirements
 
