@@ -1,8 +1,7 @@
 const express = require("express");
 const path = require("path");
-const axios = require("axios");
 const bodyParser = require("body-parser");
-
+const Stytch = require("stytch");
 var db = require("./database.js");
 
 require("dotenv").config({ path: __dirname + "/../../.env" });
@@ -45,26 +44,21 @@ app.post("/users", async function (req, res) {
 
 app.get("/stytch", function (req, res) {
   var token = req.query.token;
-  axios
-    .post(
-      `https://test.stytch.com/v1/magic_links/${token}/authenticate`,
-      {},
-      {
-        headers: {
-          Authorization:
-            "Basic " +
-            Buffer.from(
-              `${process.env.STYTCH_PROJECT_ID}:${process.env.STYTCH_SECRET}`
-            ).toString("base64"),
-        },
+  const stytchClient = new Stytch.Client({
+    project_id: process.env.STYTCH_PROJECT_ID,
+    secret: process.env.STYTCH_SECRET,
+    env: Stytch.envs.test,
+  });
+  stytchClient
+    .authenticateMagicLink(token)
+    .then((resp) => {
+      if (resp.ok) {
+        res.send(`Authenticated user with stytchUserId: ${resp}`);
+      } else {
+        res.status(resp.status_code).send("Could not authenticate the user.");
       }
-    )
-    .then((response) => {
-      res.send(`Authenticated user with stytchUserId: ${response}`);
     })
-    .catch((error) => {
-      res.status(400).send("There was an error authenticating the user.");
-    });
+    .catch((err) => res.status(500).send(`Error authenticating user ${err}`));
 });
 
 app.use((req, res, next) => {
