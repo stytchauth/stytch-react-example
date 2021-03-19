@@ -4,3 +4,8 @@
 .eslintcache
 node_modules
 db.sqlite
+/client/build
+
+# Python ignore files
+env
+__pycache__

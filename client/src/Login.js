@@ -6,11 +6,11 @@ const Login = () => {
   const stytchProps = {
     config: {
       loginConfig: {
-        magicLinkUrl: "http://localhost:9000/authenticate",
+        magicLinkUrl: `http://localhost:9000/authenticate`,
         expirationMinutes: 30,
       },
       createUserConfig: {
-        magicLinkUrl: "http://localhost:9000/authenticate",
+        magicLinkUrl: `http://localhost:9000/authenticate`,
         expirationMinutes: 30,
       },
     },
@@ -18,24 +18,27 @@ const Login = () => {
       fontFamily: '"Helvetica New", Helvetica, sans-serif',
       borderRadius: 10,
       button: {
-        backgroundColor: '#0577CA',
+        backgroundColor: "#0577CA",
       },
       input: {
-        textColor: '#090909'
+        textColor: "#090909",
       },
-      width: '321px'
+      width: "321px",
     },
     // Fill this public token in from your Stytch dashboard.
     publicToken: STYTCH_PUBLIC_TOKEN,
     callbacks: {
       onEvent: (data) => {
         if (data.eventData.type === "USER_EVENT_TYPE") {
-          fetch("/users", {
+          fetch(`/users`, {
             method: "POST",
             body: JSON.stringify({
               userId: data.eventData.userId,
               email: data.eventData.email,
             }),
+            headers: {
+              "Content-Type": "application/json",
+            },
           });
         }
       },

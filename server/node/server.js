@@ -5,11 +5,11 @@ const bodyParser = require("body-parser");
 
 var db = require("./database.js");
 
-require("dotenv").config();
+require("dotenv").config({ path: __dirname + "/../../.env" });
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../../client/build")));
 app.use(express.static("public"));
 
 app.use(bodyParser.json());
@@ -43,8 +43,8 @@ app.post("/users", async function (req, res) {
   });
 });
 
-app.get("/authenticate/:token", function (req, res) {
-  var token = req.params.token;
+app.get("/stytch", function (req, res) {
+  var token = req.query.token;
   axios
     .post(
       `https://test.stytch.com/v1/magic_links/${token}/authenticate`,
@@ -60,18 +60,17 @@ app.get("/authenticate/:token", function (req, res) {
       }
     )
     .then((response) => {
-      res.send(`Created user with stytchUserId: ${response}`);
+      res.send(`Authenticated user with stytchUserId: ${response}`);
     })
     .catch((error) => {
-      console.log(error);
       res.status(400).send("There was an error authenticating the user.");
     });
 });
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "../../client/build", "index.html"));
 });
 
 app.listen(9000, () => {
-  console.log("server started on port 9000");
+  console.log(`server started on port 9000`);
 });
