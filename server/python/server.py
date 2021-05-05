@@ -2,7 +2,6 @@ import os
 import sqlite3
 
 import stytch
-import flask_login
 
 from dotenv import load_dotenv, find_dotenv
 from flask import (
