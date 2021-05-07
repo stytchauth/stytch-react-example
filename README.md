@@ -10,8 +10,14 @@ In order to use this app, you'll need to build the frontend and start the backen
 1. Add your Stytch API credentials from the API keys tab in your Stytch dashboard. You'll need to update `STYTCH_PROJECT_ID` and `STYTCH_SECRET` in your `.env` file with your project ID and secret from the dashboard.
 1. From the API keys tab, create a public token and use it for `STYTCH_PUBLIC_TOKEN` in `Login.js`.
 
+## Quick start
+
+Build the client and run a node server by running `. ./quickstart.sh`. Visit http://localhost:9000 to see the example app.
+
 ## Build the client
 
+1. Make sure you have node installed: `brew install node`
+1. Install dependencies: `npm install`
 1. Build the frontend files from the client directory. Note: You'll need to rebuild your files to reflect any changes you want to make.
    ```
    $ cd client
