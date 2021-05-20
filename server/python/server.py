@@ -24,8 +24,19 @@ app = Flask(
     __name__, static_folder="../../client/build", static_url_path="/../../client/build"
 )
 
+con = sqlite3.connect(os.path.join(os.path.dirname(__file__), "db.sqlite"), check_same_thread=False)
 
-con = sqlite3.connect("db.sqlite", check_same_thread=False)
+def create_database(con):
+    con.execute('''
+        CREATE TABLE IF NOT EXISTS user (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name text,
+            email text UNIQUE,
+            stytch_id text,
+
+            CONSTRAINT email_unique UNIQUE (email)
+        )
+    ''')
 
 # BACKEND ROUTES
 @app.route("/stytch", methods=["GET"])
@@ -91,7 +102,8 @@ def index(path):
 
 
 if __name__ == "__main__":
-    app.run()
+    create_database(con)
+    app.run(port=9000)
 
 # TODO: Integrate flask-login
 # class User(flask_login.UserMixin):
