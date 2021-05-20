@@ -41,6 +41,9 @@ popd || exit 1
 log 'Done! Run this command again after making changes to rebuild the frontend.'
 
 log "Running Stytch example app backend server: ${backend}"
+log ""
+log "The server will start at http://localhost:9000"
+log ""
 case "${backend}" in
     python)
         pushd 'server/python' || exit 1
