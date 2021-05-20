@@ -4,35 +4,26 @@ This directory contains example python code to run a Flask server that authentic
 
 ## Requirements
 
-Python 3.7+
-Configured .env file
+* Python 3.7+
+* Configured .env file in the repo root
 
 ## How to run
 
-Create and activate a new virtual environment
+1. Create and activate a new virtual environment
+   ```
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+2. Install dependencies
+   ```
+   pip install -r requirements.txt
+   ```
+3. Run the server
+   ```
+   python3 server.py
+   ```
 
-### Recommended virtual env
-
-```
-python3 -m venv env
-source env/bin/activate
-```
-
-### Install dependencies
-
-```
-pip install -r requirements.txt
-Export and run the application
-```
-
-### Run the server
-
-```
-export FLASK_APP=server/python/server.py
-python3 -m flask run --port=9000
-```
-
-Go to localhost:9000 in your browser to see the demo
+Go to http://localhost:9000 in your browser to see the demo
 
 ## Session management
 

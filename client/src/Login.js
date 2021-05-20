@@ -1,8 +1,9 @@
 import { Stytch } from "@stytch/stytch-react";
 import React from "react";
 
+const STYTCH_PUBLIC_TOKEN = process.env.REACT_APP_STYTCH_PUBLIC_TOKEN;
+
 const Login = () => {
-  const STYTCH_PUBLIC_TOKEN = "public-token-1111-1111-1111";
   const stytchProps = {
     config: {
       loginConfig: {
@@ -25,7 +26,6 @@ const Login = () => {
       },
       width: "321px",
     },
-    // Fill this public token in from your Stytch dashboard.
     publicToken: STYTCH_PUBLIC_TOKEN,
     callbacks: {
       onEvent: (data) => {
