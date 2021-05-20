@@ -44,23 +44,20 @@ def authenticate_stytch_token():
     token = request.args.get("token")
     resp = client.MagicLinks.authenticate(token, options={})
 
-    if resp.status_code == 200:
-        stytch_resp_data = resp.json()
-        cur = con.cursor()
-        result = cur.execute(
-            'SELECT id from user WHERE stytch_id = "{0}"'.format(
-                stytch_resp_data["userId"]
-            )
-        )
-        user_row = result.fetchone()[0]
+    if resp.status_code != 200:
+        return resp
 
-        return {
-            "msg": "Successfully authenticated user {0}".format(
-                stytch_resp_data["userId"]
-            )
-        }
+    stytch_resp_data = resp.json()
+    user_id = stytch_resp_data["user_id"]
+    result = con.execute(
+        'SELECT id from user WHERE stytch_id = ?',
+        (user_id,),
+    ).fetchone()
 
-    return resp
+    if not result:
+        return {"msg": "Could not find user {}".format(user_id)}
+
+    return {"msg": "Successfully authenticated user {0}".format(user_id)}
 
 
 @app.route("/users", methods=["POST"])
@@ -70,17 +67,15 @@ def create_users():
     email = data.get("email")
     cur = con.cursor()
     users = cur.execute(
-        'SELECT id, email FROM user WHERE stytch_id = "{0}" AND email = "{1}"'.format(
-            stytch_id, email
-        )
+        'SELECT id, email FROM user WHERE stytch_id = ? AND email = ?',
+        (stytch_id, email),
     )
     if not users.fetchone():
         cur.execute(
-            'INSERT into user (email, stytch_id) VALUES ("{0}", "{1}")'.format(
-                email, stytch_id
-            )
+            'INSERT into user (stytch_id, email) VALUES (?, ?)',
+            (stytch_id, email),
         )
-        cur.commit()
+    con.commit()
     return {"user": {"email": email, "stytch_id": stytch_id}}
 
 
