@@ -11,7 +11,9 @@ In order to use this app, you'll need to build the frontend and start the backen
 
 ## Quick start
 
-Build the client and run a node server by running `. ./quickstart.sh`. Visit http://localhost:9000 to see the example app.
+Build the client and run a Node server by running `./quickstart.sh`.  Run `./quickstart.sh --help` to see all the server options.
+
+Visit http://localhost:9000 to see the example app.
 
 ## Build the client
 
