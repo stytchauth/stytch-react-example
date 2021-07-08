@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const Stytch = require("stytch");
+const stytch = require("stytch");
 var db = require("./database.js");
 
 require("dotenv").config({ path: __dirname + "/../../.env" });
@@ -46,13 +46,13 @@ app.post("/users", async function (req, res) {
 
 app.get("/stytch", function (req, res) {
   var token = req.query.token;
-  const stytchClient = new Stytch.Client({
+  const stytchClient = new stytch.Client({
     project_id: process.env.STYTCH_PROJECT_ID,
     secret: process.env.STYTCH_SECRET,
-    env: Stytch.envs.test,
+    env: stytch.envs.test,
   });
   stytchClient
-    .authenticateMagicLink(token)
+    .magicLinks.authenticate(token)
     .then((resp) => {
       if (resp.ok) {
         res.send(`Authenticated user with stytchUserId: ${resp}`);
