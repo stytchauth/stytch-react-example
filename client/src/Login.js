@@ -5,26 +5,20 @@ const STYTCH_PUBLIC_TOKEN = process.env.REACT_APP_STYTCH_PUBLIC_TOKEN;
 
 const Login = () => {
   const stytchProps = {
-    config: {
-      loginConfig: {
-        magicLinkUrl: `http://localhost:9000/authenticate`,
-        expirationMinutes: 30,
-      },
-      createUserConfig: {
-        magicLinkUrl: `http://localhost:9000/authenticate`,
-        expirationMinutes: 30,
-      },
+    loginOrSignupView: {
+      products: ['emailMagicLinks'],
+      emailMagicLinksOptions: {
+        loginRedirectURL: "http://localhost:9000/authenticate",
+        loginExpirationMinutes:30,
+        signupRedirectURL: "http://localhost:9000/authenticate",
+        signupExpirationMinutes: 30,
+      }
     },
     style: {
       fontFamily: '"Helvetica New", Helvetica, sans-serif',
-      borderRadius: 10,
-      button: {
-        backgroundColor: "#0577CA",
-      },
-      input: {
-        textColor: "#090909",
-      },
       width: "321px",
+      primaryColor: "#0577CA",
+      primaryTextColor: "#090909",
     },
     publicToken: STYTCH_PUBLIC_TOKEN,
     callbacks: {
@@ -51,7 +45,7 @@ const Login = () => {
     <div className="Sign-in-container">
       <Stytch
         publicToken={stytchProps.publicToken}
-        config={stytchProps.config}
+        loginOrSignupView={stytchProps.loginOrSignupView}
         style={stytchProps.style}
         callbacks={stytchProps.callbacks}
       />
