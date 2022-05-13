@@ -44,7 +44,7 @@ app.post("/users", async function (req, res) {
   });
 });
 
-app.get(`/stytch`, function (req, res) {
+app.get("/stytch", function (req, res) {
   var token = req.query.token;
   var token_type = req.query.type;
   const stytchClient = new stytch.Client({
