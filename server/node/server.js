@@ -44,23 +44,39 @@ app.post("/users", async function (req, res) {
   });
 });
 
-app.get("/stytch", function (req, res) {
+app.get(`/stytch`, function (req, res) {
   var token = req.query.token;
+  var token_type = req.query.type;
   const stytchClient = new stytch.Client({
     project_id: process.env.STYTCH_PROJECT_ID,
     secret: process.env.STYTCH_SECRET,
     env: stytch.envs.test,
   });
-  stytchClient
-    .magicLinks.authenticate(token)
-    .then((resp) => {
-      if (resp.ok) {
-        res.send(`Authenticated user with stytchUserId: ${resp}`);
-      } else {
-        res.status(resp.status_code).send("Could not authenticate the user.");
-      }
-    })
-    .catch((err) => res.status(500).send(`Error authenticating user ${err}`));
+
+    if (token_type == 'magic_link') {
+      stytchClient
+        .magicLinks.authenticate(token)
+        .then((resp) => {
+          if (resp.ok) {
+            res.send(`Authenticated user with stytchUserId: ${resp}`);
+          } else {
+            res.status(resp.status_code).send("Could not authenticate the user.");
+          }
+        })
+        .catch((err) => res.status(500).send(`Error authenticating user ${err}`));
+    }
+    if (token_type == 'oauth') {
+      stytchClient
+        .oauth.authenticate(token)
+        .then((resp) => {
+          if (resp.ok) {
+            res.send(`Authenticated user with stytchUserId: ${resp}`);
+          } else {
+            res.status(resp.status_code).send("Could not authenticate the user.");
+          }
+        })
+        .catch((err) => res.status(500).send(`Error authenticating user ${err}`));
+    }
 });
 
 app.use((req, res, next) => {
