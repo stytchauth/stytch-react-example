@@ -7,7 +7,7 @@
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.13",
-    "sqlite3": "^5.0.3",
+    "sqlite3": "^5.0.8",
     "stytch": "^3.4.0"
   },
   "devDependencies": {},
