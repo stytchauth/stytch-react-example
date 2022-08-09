@@ -67,6 +67,6 @@ app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "../../client/build", "index.html"));
 });
 
-app.listen(3000, () => {
-  console.log(`server started on port 3000`);
+app.listen(9000, () => {
+  console.log(`server started on port 9000`);
 });

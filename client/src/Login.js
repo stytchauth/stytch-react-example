@@ -7,9 +7,9 @@ const Login = () => {
     config: {
       products: [Products.emailMagicLinks],
       emailMagicLinksOptions: {
-        loginRedirectURL: "http://localhost:3000/authenticate",
+        loginRedirectURL: "http://localhost:9000/authenticate",
         loginExpirationMinutes: 30,
-        signupRedirectURL: "http://localhost:3000/authenticate",
+        signupRedirectURL: "http://localhost:9000/authenticate",
         signupExpirationMinutes: 30,
       }
     },

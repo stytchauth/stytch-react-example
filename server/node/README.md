@@ -10,7 +10,7 @@ This directory contains an example Express server that authenticates your magic 
 
 1. Install dependencies: `npm install`
 1. Run the app: `npm start`
-1. Open the app in your browser at `localhost:3000`
+1. Open the app in your browser at `localhost:9000`
 
 ## Session management
 
