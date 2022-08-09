@@ -98,7 +98,7 @@ def index(path):
 
 if __name__ == "__main__":
     create_database(con)
-    app.run(port=9000)
+    app.run(port=3000)
 
 # TODO: Integrate flask-login
 # class User(flask_login.UserMixin):

@@ -9,7 +9,8 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@stytch/stytch-react": "^3.0.0",
+    "@stytch/react": "^0.0.3-0",
+    "@stytch/vanilla-js": "^0.0.2-0",
     "axios": "^0.26.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.6.0",

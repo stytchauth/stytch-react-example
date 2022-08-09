@@ -4,8 +4,8 @@ This directory contains example python code to run a Flask server that authentic
 
 ## Requirements
 
-* Python 3.7+
-* Configured .env file in the repo root
+- Python 3.7+
+- Configured .env file in the repo root
 
 ## How to run
 
@@ -23,7 +23,7 @@ This directory contains example python code to run a Flask server that authentic
    python3 server.py
    ```
 
-Go to http://localhost:9000 in your browser to see the demo
+Go to http://localhost:3000 in your browser to see the demo
 
 ## Session management
 
