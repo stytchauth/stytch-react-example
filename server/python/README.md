@@ -4,8 +4,8 @@ This directory contains example python code to run a Flask server that authentic
 
 ## Requirements
 
-* Python 3.7+
-* Configured .env file in the repo root
+- Python 3.7+
+- Configured .env file in the repo root
 
 ## How to run
 
