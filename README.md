@@ -8,13 +8,13 @@ In order to use this app, you'll need to build the frontend and start the backen
 
 1. Copy the .env_template to your own .env file (`cp .env_template .env`)
 2. Fill in the placeholder values for `STYTCH_PROJECT_ID`, `STYTCH_SECRET`, and `REACT_APP_STYTCH_PUBLIC_TOKEN` in your .env file. Get your Stytch API credentials from the API keys in your [Stytch dashboard](https://stytch.com/dashboard/api-keys).
-3. Add `http://localhost:9000/authenticate` as a valid sign-up and login URL on your [Stytch dashboard](https://stytch.com/dashboard/redirect-urls).
+3. Add `http://localhost:3000/authenticate` as a valid sign-up and login URL on your [Stytch dashboard](https://stytch.com/dashboard/redirect-urls).
 
 ## Quick start
 
 Build the client and run a Node server by running `./quickstart.sh`. Run `./quickstart.sh --help` to see all the server options.
 
-Visit http://localhost:9000 to see the example app.
+Visit http://localhost:3000 to see the example app.
 
 ## Build the client
 

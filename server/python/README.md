@@ -23,7 +23,7 @@ This directory contains example python code to run a Flask server that authentic
    python3 server.py
    ```
 
-Go to http://localhost:9000 in your browser to see the demo
+Go to http://localhost:3000 in your browser to see the demo
 
 ## Session management
 

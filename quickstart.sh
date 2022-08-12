@@ -42,7 +42,7 @@ log 'Done! Run this command again after making changes to rebuild the frontend.'
 
 log "Running Stytch example app backend server: ${backend}"
 log ""
-log "The server will start at http://localhost:9000"
+log "The server will start at http://localhost:3000"
 log ""
 case "${backend}" in
     python)
