@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const LoggedOut = () => {
   return (
     <div>
-      <h2>See you next time! 👋 </h2>
+      <h2>Get started by clicking below</h2>
       <Link class="Button" to="/login">Login</Link>
     </div>
   );
