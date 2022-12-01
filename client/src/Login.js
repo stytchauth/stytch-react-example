@@ -1,4 +1,4 @@
-import { Stytch } from "@stytch/react";
+import { StytchLogin } from "@stytch/react";
 import { Products } from "@stytch/vanilla-js";
 import React from "react";
 
@@ -11,13 +11,17 @@ const Login = () => {
         loginExpirationMinutes: 30,
         signupRedirectURL: "http://localhost:3000/authenticate",
         signupExpirationMinutes: 30,
-      }
+      },
     },
+
     styles: {
       fontFamily: '"Helvetica New", Helvetica, sans-serif',
-      width: "321px",
-      primaryColor: "#0577CA",
-      primaryTextColor: "#090909",
+      buttons: {
+        primary: {
+          backgroundColor: "#0577CA",
+          textColor: "#090909",
+        },
+      },
     },
     callbacks: {
       onEvent: (event) => console.log(event),
@@ -27,7 +31,7 @@ const Login = () => {
 
   return (
     <div className="Sign-in-container">
-      <Stytch
+      <StytchLogin
         config={stytchProps.config}
         styles={stytchProps.styles}
         callbacks={stytchProps.callbacks}
