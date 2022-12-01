@@ -5,7 +5,9 @@ const LoggedOut = () => {
   return (
     <div>
       <h2>Get started by clicking below</h2>
-      <Link class="Button" to="/login">Login</Link>
+      <Link className="Button" to="/login">
+        Login
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Authenticate from "./Authenticate";
 import Home from "./Home";
@@ -10,19 +10,16 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header"/>
+        <header className="App-header" />
         <div className="App-content">
-          <Switch>
-            <Route path="/authenticate">
-              <Authenticate setAuthenticated={setAuthenticated} />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/">
-              <Home authenticated={authenticated} />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              path="/authenticate"
+              element={<Authenticate setAuthenticated={setAuthenticated} />}
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home authenticated={authenticated} />} />
+          </Routes>
         </div>
       </div>
     </Router>

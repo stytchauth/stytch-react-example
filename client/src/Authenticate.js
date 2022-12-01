@@ -1,14 +1,12 @@
 import React from "react";
-import { useLocation, useHistory } from "react-router-dom";
-import queryString from "query-string";
+import { useNavigate } from "react-router-dom";
 
 const Authenticate = ({ setAuthenticated }) => {
-  const { search } = useLocation();
-  const token = queryString.parse(search).token;
+  const token = new URLSearchParams(window.location.search).get("token");
   if (typeof token !== "string") {
     throw new Error("No valid token provided.");
   }
-  const history = useHistory();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const authenticate = async () => {
@@ -17,13 +15,13 @@ const Authenticate = ({ setAuthenticated }) => {
         if (response.ok) {
           // TODO: Add database call to get user and set information here.
           setAuthenticated(true);
-          history.push("/");
+          navigate("/");
         } else {
-          history.push("/login");
+          navigate("/login");
         }
       } catch (err) {
         console.error("Error authenticating magic link");
-        history.push("/login");
+        navigate("/login");
       }
     };
 
