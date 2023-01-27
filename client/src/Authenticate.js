@@ -1,24 +1,27 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useStytch, useStytchSession } from '@stytch/react';
 
 const Authenticate = ({ setAuthenticated }) => {
-  const token = new URLSearchParams(window.location.search).get("token");
-  if (typeof token !== "string") {
-    throw new Error("No valid token provided.");
-  }
+  const stytchClient = useStytch();
+  const { session } = useStytchSession();
+  
   const navigate = useNavigate();
 
   React.useEffect(() => {
     const authenticate = async () => {
       try {
-        const response = await fetch(`/stytch?token=${token}`);
-        if (response.ok) {
-          // TODO: Add database call to get user and set information here.
+        if (session) {
           setAuthenticated(true);
           navigate("/");
+
         } else {
-          navigate("/login");
+          const token = new URLSearchParams(window.location.search).get("token");
+          stytchClient.magicLinks.authenticate(token, {
+            session_duration_minutes: 60,
+          });
         }
+
       } catch (err) {
         console.error("Error authenticating magic link");
         navigate("/login");
@@ -26,7 +29,7 @@ const Authenticate = ({ setAuthenticated }) => {
     };
 
     authenticate();
-  }, []);
+  }, [stytchClient, session]);
 
   return <React.Fragment />;
 };

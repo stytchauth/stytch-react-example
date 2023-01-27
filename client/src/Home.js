@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoggedOut = () => {
-  return (
-    <div>
-      <h2>Get started by clicking below</h2>
-      <Link className="Button" to="/login">
-        Login
-      </Link>
-    </div>
-  );
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    navigate("/login")
+  }, []);
+
+  return <React.Fragment />;
 };
 
 const LoggedIn = () => {

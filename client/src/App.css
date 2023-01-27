@@ -1,6 +1,7 @@
 .App {
   align-items: center;
-  background-color: #E5E5E5;
+  background-color: #0A0B0D;
+  color: #FFFFFF;
   display: flex;
   font-family: "Helvetica New", Helvetica, sans-serif;
   height: 100vh;
@@ -9,12 +10,13 @@
   position: absolute;
   text-align: center;
   top: 0px;
-  width: 100%;}
+  width: 100%;
+}
 
 .Button {
   background: #0577CA;
   border-radius: 5px;
-  color: #FFFFFF;
+  color: #0A0B0D;
   font-size: 18px;
   font-weight: bold;
   left: 0;
@@ -27,8 +29,14 @@
   width: 321px;
 }
 
-.Button, a:link, a:visited {
+.Button,
+a:link,
+a:visited {
   text-decoration: none;
+}
+
+.Button-container {
+  position: relative;
 }
 
 .App-content {
@@ -41,23 +49,10 @@
 
 .App-header {
   align-items: center;
-  background: #0577CA;
+  background: #0A0B0D;
   display: flex;
   height: 60px;
   position: absolute;
   top: 0px;
   width: 100%;
-}
-
-.Sign-in-container {
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #EBEBEB;
-  border-radius: 9px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  display: flex;
-  height: 375px;
-  justify-content: center;
-  width: 450px;
 }
