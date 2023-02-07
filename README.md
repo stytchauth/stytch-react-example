@@ -1,40 +1,83 @@
-# Stytch React Example App
+# Stytch React example application
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/100632220/217049841-b9eeb72a-3e50-4074-839a-e64ee5d4a88c.png" width="750">
+</p>
 
-This example app uses the Stytch React component to send [Email Magic Links](https://stytch.com/docs/magic-links#email-magic-links_email-magic-links-overview) and a server to authenticate magic links. This repo contains two implementations of the same server written in Node and Python.
+## Overview
 
-In order to use this app, you'll need to build the frontend and start the backend server.
+This example application demonstrates how one may use Stytch within a React application. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Configure your Stytch credentials
+This project uses Stytch's [React SDK](https://stytch.com/docs/sdks/javascript-sdk) which provides pre-built UI components, useful React hooks, and headless methods to securely interact with Stytch.
 
-1. Copy the .env_template to your own .env file (`cp .env_template .env`)
-2. Fill in the placeholder values for `STYTCH_PROJECT_ID`, `STYTCH_SECRET`, and `REACT_APP_STYTCH_PUBLIC_TOKEN` in your .env file. Get your Stytch API credentials from the API keys in your [Stytch dashboard](https://stytch.com/dashboard/api-keys).
-3. Add `http://localhost:3000/authenticate` as a valid sign-up and login redirect URL on your [Stytch Dashboard](https://stytch.com/dashboard/redirect-urls).
-4. Configure the Stytch JavaScript SDK by visiting the [Stytch Dashboard](https://stytch.com/dashboard/sdk-configuration):
-   - Add `http://localhost:3000` as an authorized domain.
-   - Enable the LoginOrCreate option for Email Magic Links.
+This application features Email Magic Links and Google OAuth authentication. You can use this application's source code as a learning resource, or use it as a jumping off point for your own project. We are excited to see what you build with Stytch!
 
-## Quick start
+## Set up
 
-Build the client and run a Node server by running `./quickstart.sh`. Run `./quickstart.sh --help` to see all the server options.
+Follow the steps below to get this application fully functional and running using your own Stytch credentials.
 
-Visit http://localhost:3000 to see the example app.
 
-## Build the client
+### In the Stytch Dashboard
 
-To build the client by itself, follow these instructions:
+1. Create a [Stytch](https://stytch.com/) account. Once your account is set up a Project called "My first project" will be automatically created for you.
 
-1. Make sure you have node installed: `brew install node`
-2. Install dependencies: `npm install`
-3. Build the frontend files from the client directory. Note: You'll need to rebuild your files to reflect any changes you want to make.
-   ```
-   $ cd client
-   $ npm run build
-   ```
-4. This example app serves the frontend when you run a backend server. Click on the links under Supported server languages to go to the readme for your preferred language.
+2. Within your new Project, navigate to [SDK configuration](https://stytch.com/dashboard/sdk-configuration), and make the following changes:
+   - Click **Enable SDK**.
+   - Under **Authorized environments** add the domain `http://localhost:3000`.
+   <img width="400" alt="Authorized environments" src="https://user-images.githubusercontent.com/100632220/217052985-2e6fc264-7b8b-452b-9d24-66a76c143d10.png">
 
-## Supported server languages
+   - Within the **Email Magic Links** drawer, toggle on **Enable the LoginOrCreate Flow**.
+   <img width="400" alt="SDK Email Magic Links" src="https://user-images.githubusercontent.com/100632220/217053215-8c369de8-7828-4ad6-ac88-a50918520fc3.png">
 
-To run the server by itself, navigate to the setup instructions for the backend you want to use:
+   - Toggle on **OAuth**.
+   <img width="400" alt="SDK OAuth" src="https://user-images.githubusercontent.com/100632220/217053483-e757d1aa-af18-4af3-a476-45860ca3065f.png">
+   
+3. Navigate to [Redirect URLs](https://stytch.com/dashboard/redirect-urls), and add `http://localhost:3000` as the types **Login** and **Sign-up**.
+<img width="400" alt="Redirect URLs" src="https://user-images.githubusercontent.com/100632220/217054016-913cabda-098e-4436-9829-2f33e7db05a7.png">
 
-- [Python (3.7)](server/python)
-- [Node](server/node)
+4. Navigate to [OAuth](https://stytch.com/dashboard/oauth), and set up login for Google in the Test environment. Follow all the instructions provided in the Dashboard. If you are not interested in OAuth login you can skip this step. However, the _Continue with Google_ button in this application will not work.
+<img width="400" alt="OAuth configuration" src="https://user-images.githubusercontent.com/100632220/217055674-a7dafc17-6ad3-492f-8dd2-92560d60dc00.png">
+
+
+5. Finally, navigate to [API Keys](https://stytch.com/dashboard/api-keys), and copy your `public_token`. You will need this value later on.
+
+### On your machine
+
+In your terminal clone the project and install dependencies:
+```bash
+git clone https://github.com/cal-stytch/test-stytch-react-example.git
+cd test-stytch-react-example
+npm i
+```
+
+Next, create `.env.local` file by running the command below and your `public_token`. Learn more about Create React App's support for [custom environment variables here](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+```bash
+echo "REACT_APP_STYTCH_PUBLIC_TOKEN=YOUR_TOKEN_HERE" > .env.local
+# For example, echo "REACT_APP_STYTCH_PUBLIC_TOKEN=public-token-test-123abcd-1234-1234-abcd-123123abcabc" > .env.local
+```
+
+## Running locally
+After completing all the set up steps above the application can be run with the command:
+```bash
+npm start
+```
+
+The application will be available at [`http://localhost:3000`](http://localhost:3000).
+
+You'll be able to login with Email Magic Links or Google OAuth and see your Stytch User object, Stytch Session, and see how logging out works. 
+
+## Next steps
+This example app showcases a small portion of what you can accomplish with Stytch. Here are a few ideas to explore: 
+1. Add additional login methods like [Passwords](https://stytch.com/docs/passwords#guides_getting-started-sdk).
+2. Replace the prebuilt UI with your own using by using the SDK's [headless methods](https://stytch.com/docs/sdks/javascript-sdk).
+3. Replace the Google OAuth button with the high converting [Google One Tap UI](https://stytch.com/docs/oauth#guides_google-sdk).
+4. Secure your app further by building MFA authentication using methods like [WebAuthn](https://stytch.com/docs/sdks/javascript-sdk#webauthn).
+5. Use [Stytch Sessions](https://stytch.com/docs/sessions) to secure your backend.
+
+## Get help and join the community
+#### :speech_balloon: Stytch community Slack
+
+Join the discussion, ask questions, and suggest new features in our ​[Slack community](https://join.slack.com/t/stytch/shared_invite/zt-nil4wo92-jApJ9Cl32cJbEd9esKkvyg)!
+
+#### :question: Need support?
+
+Check out the [Stytch Forum](https://forum.stytch.com/) or email us at [support@stytch.com](mailto:support@stytch.com).
