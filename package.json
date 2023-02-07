@@ -1,7 +1,6 @@
 {
   "name": "stytch-react-example",
   "version": "1.0.0",
-  "private": true,
   "dependencies": {
     "@stytch/react": "^0.5.0",
     "@stytch/vanilla-js": "^0.5.5",
