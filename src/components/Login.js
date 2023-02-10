@@ -20,6 +20,7 @@ const Login = () => {
       },
     },
   };
+
   const config = {
     products: [Products.emailMagicLinks, Products.oauth],
     emailMagicLinksOptions: {
@@ -37,7 +38,19 @@ const Login = () => {
     },
   };
 
-  return <StytchLogin config={config} styles={styles} />;
+  /*
+  The Stytch JavaScript SDKs offer callbacks that help you track where users are in the authentication flow.
+  You can also use these callbacks to trigger actions in your application.
+  
+  For example, you can use a the onEvent callback with a 200 on PASSWORD_AUTHENTICATE to trigger a redirect
+  to a protected page after a user successfully logs in.
+  */
+  const callbacks = {
+    onEvent: (message) => console.log(message),
+    onError: (error) => console.log(error),
+  }
+
+  return <StytchLogin config={config} styles={styles} callbacks={callbacks} />;
 };
 
 export default Login;
