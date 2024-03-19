@@ -88,7 +88,7 @@ This example app showcases a small portion of what you can accomplish with Stytc
 
 #### :speech_balloon: Stytch community Slack
 
-Join the discussion, ask questions, and suggest new features in our ​[Slack community](https://join.slack.com/t/stytch/shared_invite/zt-nil4wo92-jApJ9Cl32cJbEd9esKkvyg)!
+Join the discussion, ask questions, and suggest new features in our ​[Slack community](https://stytch.slack.com/join/shared_invite/zt-2f0fi1ruu-ub~HGouWRmPARM1MTwPESA)!
 
 #### :question: Need support?
 
