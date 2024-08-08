@@ -4,4 +4,4 @@
 # the repo. Unless a later match takes precedence,
 # @stytchauth/client-libraries will be requested for
 # review when someone opens a pull request.
-*       @stytchauth/developer-relations
+*       @stytchauth/developer-relations @stytchauth/engineering
