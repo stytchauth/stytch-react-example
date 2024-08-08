@@ -27,11 +27,7 @@ Follow the steps below to get this application fully functional and running usin
 
      <img width="400" alt="Authorized environments" src="https://user-images.githubusercontent.com/100632220/217052985-2e6fc264-7b8b-452b-9d24-66a76c143d10.png">
 
-   - Within the **Email Magic Links** drawer, toggle on **Enable the LoginOrCreate Flow**.
-
-     <img width="400" alt="SDK Email Magic Links" src="https://user-images.githubusercontent.com/100632220/217053215-8c369de8-7828-4ad6-ac88-a50918520fc3.png">
-
-3. Navigate to [Redirect URLs](https://stytch.com/dashboard/redirect-urls), and add `http://localhost:3000` as the types **Login** and **Sign-up**.
+3. Navigate to [Redirect URLs](https://stytch.com/dashboard/redirect-urls), and add `http://localhost:3000/authenticate` as the types **Login** and **Sign-up**.
 
    <img width="400" alt="Redirect URLs" src="https://user-images.githubusercontent.com/100632220/217054016-913cabda-098e-4436-9829-2f33e7db05a7.png">
 
@@ -70,11 +66,11 @@ You'll be able to login with Email Magic Links and see your Stytch User object, 
 
 This example app showcases a small portion of what you can accomplish with Stytch. Here are a few ideas to explore:
 
-1. Add additional login methods like [Passwords](https://stytch.com/docs/passwords#guides_getting-started-sdk).
-2. Replace the prebuilt UI with your own using by using the SDK's [headless methods](https://stytch.com/docs/sdks/javascript-sdk).
-3. Add a Google OAuth button, or replace it with the high converting [Google One Tap UI](https://stytch.com/docs/oauth#guides_google-sdk).
-4. Secure your app further by building MFA authentication using methods like [WebAuthn](https://stytch.com/docs/sdks/javascript-sdk#webauthn).
-5. Use [Stytch Sessions](https://stytch.com/docs/sessions) to secure your backend.
+1. Add additional login methods like [Passwords](https://stytch.com/docs/guides/passwords/sdk).
+2. Replace the prebuilt UI with your own using by using the SDK's [headless methods](https://stytch.com/docs/guides/implementation/frontend-headless).
+3. Add a Google OAuth button, or replace it with the high converting [Google One Tap UI](https://stytch.com/docs/guides/oauth/sdk#add-google-one-tap-via-the-sdk).
+4. Secure your app further by building MFA authentication using methods like [Passkeys](https://stytch.com/docs/guides/passkeys/overview).
+5. Use [Stytch Sessions](https://stytch.com/docs/guides/sessions/using-sessions) to secure your backend.
 
 ## Get help and join the community
 
