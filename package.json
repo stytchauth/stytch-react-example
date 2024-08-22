@@ -2,10 +2,10 @@
   "name": "stytch-react-example",
   "version": "1.0.0",
   "dependencies": {
-    "@stytch/react": "^10.0.0",
-    "@stytch/vanilla-js": "^3.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@stytch/react": "^18.3.3",
+    "@stytch/vanilla-js": "^4.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1"
   },
   "scripts": {
