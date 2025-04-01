@@ -15,10 +15,19 @@ const Login = () => {
     },
     buttons: {
       primary: {
-        backgroundColor: '#4A37BE',
-        borderColor: '#4A37BE',
+        backgroundColor: '#10A37F', // OpenAI's primary teal color
+        borderColor: '#10A37F',
+        '&:hover': {
+          backgroundColor: '#0D8C6D', // Slightly darker shade for hover state
+        },
       },
     },
+    colors: {
+      primary: '#10A37F', // OpenAI's primary teal color
+      background: '#FFFFFF', // White background
+      text: '#202123', // Dark text matching OpenAI's text color
+    },
+    fontFamily: 'Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
   };
   const config = {
     products: [Products.emailMagicLinks],
