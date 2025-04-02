@@ -15,18 +15,18 @@ const Login = () => {
     },
     buttons: {
       primary: {
-        backgroundColor: '#3A6E97', // Primary Gong blue
-        borderColor: '#3A6E97',
+        backgroundColor: '#007BFF', // Primary color
+        borderColor: '#007BFF',
         '&:hover': {
-          backgroundColor: '#4ECDC4', // Secondary teal for hover
+          backgroundColor: '#6C757D', // Secondary color for hover
         },
       },
     },
     colors: {
-      primary: '#3A6E97', // Primary Gong blue
-      background: '#FFFFFF', // White background for modern, clean look
-      text: '#333333', // Dark gray text for readability
-      secondary: '#FF6B6B', // Secondary accent color
+      primary: '#007BFF', // Primary color
+      background: '#F1F3F5', // Light background for modern, clean look
+      text: '#343A40', // Dark gray text for readability
+      secondary: '#6C757D', // Secondary color
     },
     fontFamily: 'Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
   };
