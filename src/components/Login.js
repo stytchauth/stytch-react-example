@@ -15,17 +15,18 @@ const Login = () => {
     },
     buttons: {
       primary: {
-        backgroundColor: '#1DB954', // Spotify green
-        borderColor: '#1DB954',
+        backgroundColor: '#3A6E97', // Primary Gong blue
+        borderColor: '#3A6E97',
         '&:hover': {
-          backgroundColor: '#1ed760', // Slightly lighter green for hover
+          backgroundColor: '#4ECDC4', // Secondary teal for hover
         },
       },
     },
     colors: {
-      primary: '#1DB954', // Spotify green
-      background: '#191414', // Spotify black
-      text: '#FFFFFF', // White text for contrast
+      primary: '#3A6E97', // Primary Gong blue
+      background: '#FFFFFF', // White background for modern, clean look
+      text: '#333333', // Dark gray text for readability
+      secondary: '#FF6B6B', // Secondary accent color
     },
     fontFamily: 'Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
   };
