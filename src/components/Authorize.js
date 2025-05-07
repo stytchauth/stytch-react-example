@@ -1,4 +1,4 @@
-import { useRef, Redirect } from 'react';
+import { Redirect } from 'react';
 import { IdentityProvider, useStytchUser } from '@stytch/react';
 
 const Authorize = () => {
