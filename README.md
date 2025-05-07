@@ -12,6 +12,8 @@ This project uses Stytch's [React SDK](https://stytch.com/docs/sdks/javascript-s
 
 This application features Email Magic Links and Google OAuth authentication. You can use this application's source code as a learning resource, or use it as a jumping off point for your own project. We are excited to see what you build with Stytch!
 
+This app also implements an authorization page for Stytch Connected Apps, which hosts the IdentityProvider component (related guide in Stytch docs coming soon). If you're just here to learn about Stytch with React, ignore `components/Authorize.js`.
+
 ## Set up
 
 Follow the steps below to get this application fully functional and running using your own Stytch credentials.
