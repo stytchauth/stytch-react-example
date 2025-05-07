@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <div className="container">
         <Routes>
-          <Route path="/authorize" element={<Authorize />} />
+          <Route path="/oauth/authorize" element={<Authorize />} />
           <Route path="/" element={user ? <Profile /> : <Login />} />
         </Routes>
       </div>
