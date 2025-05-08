@@ -30,7 +30,6 @@ const Login = () => {
     },
   };
 
-
   return <StytchLogin config={config} styles={styles} />;
 };
 
