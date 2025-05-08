@@ -25,6 +25,7 @@ const Login = () => {
     emailMagicLinksOptions: {
       loginRedirectURL: "http://localhost:3000",
       signupRedirectURL: "http://localhost:3000",
+      signupExpirationMinutes: 60,
     },
     oauthOptions: {
       providers: [
