@@ -4,8 +4,8 @@
   "dependencies": {
     "@stytch/react": "^19.5.1",
     "@stytch/vanilla-js": "^5.23.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1"
   },

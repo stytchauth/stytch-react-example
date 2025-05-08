@@ -11,30 +11,30 @@ https://stytch.com/docs/sdks/javascript-sdk#ui-configs
 const Login = () => {
   const styles = {
     container: {
-      width: "100%",
+      width: '100%',
     },
     buttons: {
       primary: {
-        backgroundColor: "#4A37BE",
-        borderColor: "#4A37BE",
+        backgroundColor: '#4A37BE',
+        borderColor: '#4A37BE',
       },
     },
   };
   const config = {
-    products: [Products.emailMagicLinks, Products.oauth],
+    products: [Products.emailMagicLinks],
     emailMagicLinksOptions: {
-      loginRedirectURL: "http://localhost:3000",
+      loginRedirectURL: 'http://localhost:3000/authenticate',
       loginExpirationMinutes: 60,
-      signupRedirectURL: "http://localhost:3000",
+      signupRedirectURL: "http://localhost:3000/authenticate",
       signupExpirationMinutes: 60,
     },
     oauthOptions: {
       providers: [
         { type: OAuthProviders.Google },
       ],
-      loginRedirectURL: "http://localhost:3000",
+      loginRedirectURL: "http://localhost:3000/authenticate",
       loginExpirationMinutes: 60,
-      signupRedirectURL: "http://localhost:3000",
+      signupRedirectURL: 'http://localhost:3000/authenticate',
       signupExpirationMinutes: 60,
     }
   };
