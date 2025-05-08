@@ -23,13 +23,17 @@ const TokenAuthenticator = ({ children }) => {
       // If a token is found, authenticate it with the appropriate method
       if (token && tokenType) {
         if (tokenType === "magic_links") {
-          stytch.magicLinks.authenticate(token, {
-            session_duration_minutes: 60,
-          });
+          stytch.magicLinks
+            .authenticate(token, {
+              session_duration_minutes: 60,
+            })
+            .then(() => (window.location.href = "/"));
         } else if (tokenType === "oauth") {
-          stytch.oauth.authenticate(token, {
-            session_duration_minutes: 60,
-          });
+          stytch.oauth
+            .authenticate(token, {
+              session_duration_minutes: 60,
+            })
+            .then(() => (window.location.href = "/"));
         }
       }
     }
