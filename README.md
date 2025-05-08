@@ -12,7 +12,7 @@ This project uses Stytch's [React SDK](https://stytch.com/docs/sdks/javascript-s
 
 This application features Email Magic Links. You can use this application's source code as a learning resource, or use it as a jumping off point for your own project. We are excited to see what you build with Stytch!
 
-This app also implements an authorization page for Stytch Connected Apps, which hosts the IdentityProvider component (related guide in Stytch docs coming soon). If you're just here to learn about Stytch with React, ignore `components/Authorize.js`.
+This app also implements an authorization page for Stytch Connected Apps, which hosts the IdentityProvider component (related guide in Stytch docs is [here](https://stytch.com/docs/guides/connected-apps/cli-app)). If you're just here to learn about Stytch with React, ignore `components/Authorize.js`.
 
 ## Set up
 
