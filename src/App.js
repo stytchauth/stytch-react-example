@@ -5,7 +5,6 @@ import Profile from "./components/Profile";
 import Authorize from "./components/Authorize";
 
 const App = () => {
-  // The useStytchUser hook will return the existing Stytch User object if one exists
   const { user, fromCache } = useStytchUser();
 
   return (

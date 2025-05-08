@@ -1,16 +1,14 @@
-import { Redirect } from 'react';
+import { Navigate } from 'react-router-dom';
 import { IdentityProvider, useStytchUser } from '@stytch/react';
 
 const Authorize = () => {
   const { user } = useStytchUser();
 
   if (!user) {
-    const loginURL = `/?returnTo=${window.location.toString()}`
-    return <Redirect to={loginURL} />
+    return <Navigate to="/" replace />;
   }
 
-  return <IdentityProvider />
-
+  return <IdentityProvider />;
 };
 
 export default Authorize; 
