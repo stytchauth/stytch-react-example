@@ -1,4 +1,3 @@
-import { Navigate } from 'react-router-dom';
 import { IdentityProvider, useStytchUser } from '@stytch/react';
 import { useEffect } from 'react';
 
