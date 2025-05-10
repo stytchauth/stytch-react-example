@@ -45,11 +45,10 @@ cd stytch-react-example
 npm i
 ```
 
-Next, create `.env.local` file by running the command below and your `public_token`. Learn more about Create React App's support for [custom environment variables here](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+Next, create a `.env.local` file by running the command below, and enter your `public_token`, and optionally project ID, secret, and Connected Apps client ID. Learn more about Create React App's support for [custom environment variables here](https://create-react-app.dev/docs/adding-custom-environment-variables/).
 
 ```bash
-echo "REACT_APP_STYTCH_PUBLIC_TOKEN=YOUR_TOKEN_HERE" > .env.local
-# For example, echo "REACT_APP_STYTCH_PUBLIC_TOKEN=public-token-test-123abcd-1234-1234-abcd-123123abcabc" > .env.local
+cp .env.template .env.local
 ```
 
 ## Running locally
@@ -63,6 +62,12 @@ npm start
 The application will be available at [`http://localhost:3000`](http://localhost:3000).
 
 You'll be able to login with Email Magic Links and see your Stytch User object, Stytch Session, and see how logging out works.
+
+To run the app with an API backend available at port 3001 for use with the [Connected Apps CLI example](https://github.com/stytchauth/stytch-connected-apps-cli-example), run the following command:
+
+```bash
+npm run server
+```
 
 ## Next steps
 

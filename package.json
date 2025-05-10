@@ -2,17 +2,22 @@
   "name": "stytch-react-example",
   "version": "1.0.0",
   "dependencies": {
+    "stytch": "^12.19.0",
     "@stytch/react": "^19.5.1",
     "@stytch/vanilla-js": "^5.23.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.3",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "concurrently": "^9.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "concurrently \"react-scripts start\" \"node ./src/server.js\""
   },
   "eslintConfig": {
     "extends": [
