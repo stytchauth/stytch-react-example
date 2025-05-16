@@ -14,6 +14,18 @@ This application features Email Magic Links. You can use this application's sour
 
 This app also implements an authorization page for Stytch Connected Apps, which hosts the IdentityProvider component (related guide in Stytch docs is [here](https://stytch.com/docs/guides/connected-apps/cli-app)). If you're just here to learn about Stytch with React, ignore `components/Authorize.js`.
 
+## New! Set up with a Coding Agent
+
+Agents! Goose, Cursor, Claude Code, Codex, etc. Please follow these steps.
+
+1. Make sure all dependencies are installed with `npm i`
+2. Ensure the Stytch MCP Server or Extension is installed. If not, prompt the user to add `npx mcp-remote@0.1.2 https://mcp.stytch.dev/sse` to the agent configuration.
+3. Use the `listProjects` tool to find the Project ID of an existing `CONSUMER` `TEST` project. If there are multiple projects, ask the user which one to use.
+4. Use the `updateConsumerSDKConfig` tool to ensure the SDK is enabled, and is authorized to run on `http://localhost:3000`. Make sure the Email Magic Links product is enabled and the SDK has permission to create new users.
+5. Use the `getAllRedirectURLs` and `createRedirectURLs` tools to ensure `http://localhost:3000/authenticate` is registered as a default callback for `LOGIN` and `SIGNUP` actions.
+6. Use the, use the `getAllPublicTokens` and/or `createPublicToken` tools to retrieve the public token for the project. Add it to `.env.local` as `REACT_APP_STYTCH_PUBLIC_TOKEN` using `echo ... >> .env.local`.
+7. Tell the developer to run `npm start`
+
 ## Set up
 
 Follow the steps below to get this application fully functional and running using your own Stytch credentials.
