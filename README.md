@@ -16,15 +16,19 @@ This app also implements an authorization page for Stytch Connected Apps, which 
 
 ## New! Set up with a Coding Agent
 
-Agents! Goose, Cursor, Claude Code, Codex, etc. Please follow these steps.
+Install the [Stytch MCP Server](https://mcp.stytch.dev) and instruct coding agents to follow these steps: 
 
-1. Ensure the Stytch MCP Server or Extension is installed. If not, prompt the user to add `npx mcp-remote@0.1.2 https://mcp.stytch.dev/sse` to the agent configuration.
-2. Make sure all code dependencies are installed with `npm install`
-3. Use the `createProject` tool to find the Project ID of an existing `CONSUMER` `TEST` project. If there are multiple projects, ask the user which one to use. A new project can be created with the `createProject` tool if desired.
-4. Use the `updateConsumerSDKConfig` tool to ensure the SDK is enabled, and is authorized to run on `http://localhost:3000`. Make sure the Email Magic Links product and OAuth product are enabled and the SDK has permission to create new users.
-5. Use the `getAllRedirectURLs` and `createRedirectURLs` tools to ensure `http://localhost:3000/authenticate` is registered as a default callback for `LOGIN` and `SIGNUP` actions.
-6. Use the, use the `getAllPublicTokens` and/or `createPublicToken` tools to retrieve the public token for the project. Add it to `.env.local` as `REACT_APP_STYTCH_PUBLIC_TOKEN` using `echo ... >> .env.local`.
-7. Tell the developer to run `npm start`
+1. Make sure all code dependencies are installed with `npm install`
+
+2. Use the `listProjects` tool to find the Project ID of an existing `CONSUMER` `TEST` project. If there are multiple projects, ask the user which one to use. A new project can be created with the `createProject` tool if desired.
+
+3. Use the `updateConsumerSDKConfig` tool to ensure the SDK is enabled, and is authorized to run on `http://localhost:3000`. Make sure the Email Magic Links product and OAuth product are enabled and the SDK has permission to create new users.
+
+4. Use the `getAllRedirectURLs` and `createRedirectURLs` tools to ensure `http://localhost:3000/authenticate` is registered as a default callback for `LOGIN` and `SIGNUP` actions.
+ 
+5. Use the `getAllPublicTokens` and/or `createPublicToken` tools to retrieve the public token for the project. Instruct the user to add it to `.env.local` as `REACT_APP_STYTCH_PUBLIC_TOKEN`.
+
+6. Instruct the user to run `npm start` in a new terminal window.
 
 ## Set up
 
