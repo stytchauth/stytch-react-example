@@ -5,7 +5,7 @@ import Profile from "./components/Profile";
 import Authorize from "./components/Authorize";
 
 const App = () => {
-  const { user, fromCache } = useStytchUser();
+  const { user } = useStytchUser();
 
   return (
     <Router>

@@ -21,13 +21,20 @@ const Login = () => {
     },
   };
   const config = {
-    products: [Products.emailMagicLinks],
+    products: [Products.emailMagicLinks, Products.oauth],
     emailMagicLinksOptions: {
       loginRedirectURL: 'http://localhost:3000/authenticate',
       loginExpirationMinutes: 60,
       signupRedirectURL: 'http://localhost:3000/authenticate',
       signupExpirationMinutes: 60,
     },
+    oauthOptions: {
+      providers: [{ type: 'google'}],
+      loginRedirectURL: 'http://localhost:3000/authenticate',
+      loginExpirationMinutes: 60,
+      signupRedirectURL: 'http://localhost:3000/authenticate',
+      signupExpirationMinutes: 60,
+    }
   };
 
   return <StytchLogin config={config} styles={styles} />;
