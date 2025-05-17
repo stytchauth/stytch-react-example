@@ -10,7 +10,7 @@ This example application demonstrates how one may use Stytch within a React appl
 
 This project uses Stytch's [React SDK](https://stytch.com/docs/sdks/javascript-sdk) which provides pre-built UI components, useful React hooks, and headless methods to securely interact with Stytch.
 
-This application features Email Magic Links. You can use this application's source code as a learning resource, or use it as a jumping off point for your own project. We are excited to see what you build with Stytch!
+This application features Email Magic Links and OAuth. You can use this application's source code as a learning resource, or use it as a jumping off point for your own project. We are excited to see what you build with Stytch!
 
 This app also implements an authorization page for Stytch Connected Apps, which hosts the IdentityProvider component (related guide in Stytch docs is [here](https://stytch.com/docs/guides/connected-apps/cli-app)). If you're just here to learn about Stytch with React, ignore `components/Authorize.js`.
 
@@ -99,7 +99,7 @@ This example app showcases a small portion of what you can accomplish with Stytc
 
 #### :speech_balloon: Stytch community Slack
 
-Join the discussion, ask questions, and suggest new features in our ​[Slack community](https://stytch.com/docs/resources/support/overview)!
+Join the discussion, ask questions, and suggest new features in our [Slack community](https://stytch.com/docs/resources/support/overview)!
 
 #### :question: Need support?
 
