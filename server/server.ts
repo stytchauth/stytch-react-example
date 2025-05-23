@@ -7,9 +7,9 @@ app.use(cookieParser());
 const port: number = Number(process.env.PORT) || 3001;
 
 app.get("/api/resources", authorizeToken(), (req, res) => {
-  const identity = (req as any).identity;
+  const identity = req.identity;
   res.json({
-    message: "If you're seeing this, your call was successfully authorized!",
+    message: "If you're seeing this, your call was successfully authorized! You are " + identity.user_id,
     identity,
   });
 });

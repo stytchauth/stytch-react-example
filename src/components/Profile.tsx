@@ -46,10 +46,10 @@ const Profile = (): ReactElement => {
         <span className="code">stytch_session_jwt</span> respectively.
       </p>
       <button className="primary" onClick={callApi}>
-        Call API
+        Call Protected API
       </button>
       {apiMessage && <p className="success">{apiMessage}</p>}
-      {/* Revoking the session results in the session being revoked and cleared from browser storage. The user will return to Login.js */}
+      {/* Revoking the session results in the session being revoked and cleared from browser storage. The user will return to Login */}
       <button className="primary" onClick={() => stytch.session.revoke()}>
         Log out
       </button>
