@@ -1,5 +1,5 @@
 import { useStytch, useStytchUser } from "@stytch/react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 /*
 During both the Magic link and OAuth flow, Stytch will redirect the user back to your application to a specified redirect URL (see Login.js). 
@@ -12,8 +12,14 @@ On successful authentication, a session will be created and the user will be sho
 const TokenAuthenticator = ({ children }) => {
   const stytch = useStytch();
   const { user } = useStytchUser();
+  const hasAuthenticated = useRef(false);
 
   useEffect(() => {
+    // Guard against running twice in React 18 StrictMode
+    if (hasAuthenticated.current) {
+      return;
+    }
+
     // If the stytch SDK is available, and there is no existing user check for a token value in query params
     if (stytch && !user) {
       const queryParams = new URLSearchParams(window.location.search);
@@ -22,6 +28,7 @@ const TokenAuthenticator = ({ children }) => {
 
       // If a token is found, authenticate it with the appropriate method
       if (token && tokenType) {
+        hasAuthenticated.current = true;
         if (tokenType === "magic_links") {
           stytch.magicLinks
             .authenticate(token, {
