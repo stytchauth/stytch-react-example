@@ -6,7 +6,7 @@
 
 ## Overview
 
-This example application demonstrates how one may use Stytch within a React application. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example application demonstrates how one may use Stytch within a React application. The project now uses [Vite](https://vitejs.dev/) for development and building the application.
 
 This project uses Stytch's [React SDK](https://stytch.com/docs/sdks/javascript-sdk) which provides pre-built UI components, useful React hooks, and headless methods to securely interact with Stytch.
 
@@ -45,7 +45,9 @@ cd stytch-react-example
 npm i
 ```
 
-Next, create a `.env.local` file by running the command below, and enter your `public_token`, and optionally project ID, secret, and Connected Apps client ID. Learn more about Create React App's support for [custom environment variables here](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+Next, create a `.env.local` file by running the command below, and enter your `public_token`, and optionally project ID, secret, and Connected Apps client ID.
+
+The Stytch public token should be stored in an environment variable named `VITE_STYTCH_PUBLIC_TOKEN`.
 
 ```bash
 cp .env.template .env.local
@@ -59,7 +61,7 @@ After completing all the set up steps above the application can be run with the 
 npm start
 ```
 
-The application will be available at [`http://localhost:3000`](http://localhost:3000).
+The application will be available at [`http://localhost:3000`](http://localhost:3000) using Vite's development server.
 
 You'll be able to login with Email Magic Links and see your Stytch User object, Stytch Session, and see how logging out works.
 

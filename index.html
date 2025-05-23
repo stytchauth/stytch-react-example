@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -17,7 +17,7 @@
       The Stytch React example application requires JavaScript to run.
     </noscript>
     <header>
-      <a class="header" href="/">
+      <a class="header" href="/public">
         <img src="/logo.svg" width="190px"/>
       </a>
       <div class="link-container">
@@ -28,6 +28,7 @@
         </a>
       </div>
     </header>
-    <main id="root"></main>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
