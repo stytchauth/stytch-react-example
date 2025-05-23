@@ -1,5 +1,6 @@
-import React from 'react';
+import type { ReactElement } from 'react';
 import { StytchLogin } from '@stytch/react';
+import type { StytchLoginConfig, StyleConfig } from '@stytch/vanilla-js';
 import { Products } from '@stytch/vanilla-js';
 
 /*
@@ -8,8 +9,8 @@ Login configures and renders the StytchLogin component which is a prebuilt UI co
 This component accepts style, config, and callbacks props. To learn more about possible options review the documentation at
 https://stytch.com/docs/sdks/javascript-sdk#ui-configs
 */
-const Login = () => {
-  const styles = {
+const Login = (): ReactElement => {
+  const styles: StyleConfig = {
     container: {
       width: '100%',
     },
@@ -20,7 +21,7 @@ const Login = () => {
       },
     },
   };
-  const config = {
+  const config: StytchLoginConfig = {
     products: [Products.emailMagicLinks],
     emailMagicLinksOptions: {
       loginRedirectURL: 'http://localhost:3000/authenticate',

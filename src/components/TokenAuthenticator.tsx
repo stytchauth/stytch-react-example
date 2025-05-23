@@ -1,5 +1,5 @@
 import { useStytch, useStytchUser } from "@stytch/react";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 
 /*
 During both the Magic link and OAuth flow, Stytch will redirect the user back to your application to a specified redirect URL (see Login.js). 
@@ -9,7 +9,11 @@ A redirect URL for this example app will look something like: http://localhost:3
 TokenAuthenticator will detect the presence of a token in the query parameters, and attempt to authenticate it.
 On successful authentication, a session will be created and the user will be shown Profile.js 
 */
-const TokenAuthenticator = ({ children }) => {
+interface TokenAuthenticatorProps {
+  children?: ReactNode;
+}
+
+const TokenAuthenticator = ({ children }: TokenAuthenticatorProps): ReactNode => {
   const stytch = useStytch();
   const { user } = useStytchUser();
 
@@ -38,7 +42,7 @@ const TokenAuthenticator = ({ children }) => {
       }
     }
   }, [stytch, user]);
-  return children;
+  return children ?? null;
 };
 
 export default TokenAuthenticator;

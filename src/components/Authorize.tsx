@@ -1,7 +1,7 @@
 import { IdentityProvider, useStytchUser } from '@stytch/react';
-import { useEffect } from 'react';
+import { useEffect, type ReactElement } from 'react';
 
-const Authorize = () => {
+const Authorize = (): ReactElement => {
   const { user } = useStytchUser();
 
   useEffect(() => {
@@ -13,4 +13,4 @@ const Authorize = () => {
   return <IdentityProvider />;
 };
 
-export default Authorize; 
+export default Authorize;

@@ -1,10 +1,11 @@
 import { useStytchUser } from "@stytch/react";
+import type { ReactElement } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Authorize from "./components/Authorize";
 
-const App = () => {
+const App = (): ReactElement => {
   const { user, fromCache } = useStytchUser();
 
   return (

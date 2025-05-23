@@ -5,10 +5,11 @@ const stytch = require("stytch");
 dotenv.config({ path: '.env.local' });
 const client = new stytch.Client({
   project_id: process.env.STYTCH_PROJECT_ID,
-  secret: process.env.STYTCH_SECRET
+  secret: process.env.STYTCH_SECRET,
 });
 
 const authorizeTokenMiddleware = () => {
+  /** @type {import('express').RequestHandler} */
   return async (req, res, next) => {
     try {
       const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
@@ -20,7 +21,7 @@ const authorizeTokenMiddleware = () => {
       const params = {
         token: token,
         client_id: process.env.STYTCH_CLIENT_ID,
-        token_type_hint: 'access_token'
+        token_type_hint: 'access_token',
       };
       const options = {};
 
