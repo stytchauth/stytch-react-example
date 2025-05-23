@@ -1,7 +1,6 @@
-import type { ReactElement } from 'react';
-import { StytchLogin } from '@stytch/react';
-import type { StytchLoginConfig, StyleConfig } from '@stytch/vanilla-js';
-import { Products } from '@stytch/vanilla-js';
+import type {ReactElement} from 'react';
+import {StytchLogin} from '@stytch/react';
+import {OAuthProviders, Products, StyleConfig, StytchLoginConfig} from '@stytch/vanilla-js';
 
 /*
 Login configures and renders the StytchLogin component which is a prebuilt UI component for auth powered by Stytch
@@ -21,14 +20,20 @@ const Login = (): ReactElement => {
       },
     },
   };
+  const callbackURL = window.location.href + 'authenticate';
   const config: StytchLoginConfig = {
-    products: [Products.emailMagicLinks],
+    products: [Products.emailMagicLinks, Products.oauth],
     emailMagicLinksOptions: {
-      loginRedirectURL: 'http://localhost:3000/authenticate',
+      loginRedirectURL: callbackURL,
       loginExpirationMinutes: 60,
-      signupRedirectURL: 'http://localhost:3000/authenticate',
+      signupRedirectURL: callbackURL,
       signupExpirationMinutes: 60,
     },
+    oauthOptions: {
+      providers: [{type: OAuthProviders.Google}],
+      loginRedirectURL: callbackURL,
+      signupRedirectURL: callbackURL,
+    }
   };
 
   return <StytchLogin config={config} styles={styles} />;
