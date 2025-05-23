@@ -8,16 +8,22 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.3",
-    "react-scripts": "5.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "concurrently": "^9.1.2"
   },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/node": "^20.8.10",
+    "vite": "^5.1.0",
+    "@vitejs/plugin-react": "^4.2.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "server": "concurrently \"react-scripts start\" \"node ./src/server.js\""
+    "start": "vite",
+    "build": "vite build",
+    "server": "concurrently \"vite\" \"node ./src/server.js\""
   },
   "eslintConfig": {
     "extends": [
