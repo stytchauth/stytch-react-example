@@ -4,7 +4,9 @@
   "dependencies": {
     "@stytch/react": "^19.5.2",
     "@stytch/vanilla-js": "^5.24.1",
+    "@types/cookie-parser": "^1.4.8",
     "concurrently": "^9.1.2",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "react": "^18.3.1",
@@ -18,14 +20,15 @@
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.2.0",
     "ts-node": "^10.9.1",
+    "tsx": "^4.19.4",
     "typescript": "^5.3.3",
     "vite": "^6.3.5"
   },
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
+    "dev": "concurrently \"vite\" \"tsx ./server/server.ts\"",
+    "start": "concurrently \"vite\" \"tsx ./server/server.ts\"",
     "build": "vite build",
-    "server": "concurrently \"vite\" \"ts-node ./server/server.ts\""
+    "server": "concurrently \"vite\" \"tsx ./server/server.ts\""
   },
   "eslintConfig": {
     "extends": [
