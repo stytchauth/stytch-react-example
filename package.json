@@ -4,7 +4,7 @@
   "dependencies": {
     "@stytch/react": "^19.5.2",
     "@stytch/vanilla-js": "^5.24.1",
-    "@types/cookie-parser": "^1.4.8",
+    "@types/cookie-parser": "^1.4.10",
     "concurrently": "^9.1.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
