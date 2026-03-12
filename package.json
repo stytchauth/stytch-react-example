@@ -2,7 +2,7 @@
   "name": "stytch-react-example",
   "version": "1.0.0",
   "dependencies": {
-    "@stytch/react": "^19.5.2",
+    "@stytch/react": "^19.18.1",
     "@stytch/vanilla-js": "^5.24.1",
     "@types/cookie-parser": "^1.4.8",
     "concurrently": "^9.1.2",
